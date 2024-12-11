@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../index.css">
+    <title>register</title>
+    <style>
+        form {
+            padding: 10px;
+            height: 100%;
+            width: 100%;
+            overflow: scroll;
+        }
+
+        .formitem {
+            margin: 5px;
+        }
+
+        .formlabel {
+            width: 20%;
+        }
+
+        .iptbox {
+            width: 60%;
+        }
+        .option{
+            width: 50px;
+        }
+        .option:hover{
+            color: aqua;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <form>
+        <div class="formitem row">
+            <div class="formlabel">
+                Name
+            </div>
+            <input class="iptbox" type="text" name="name" id="name" required>
+        </div>
+        <div class="formitem row">
+            <div class="formlabel">
+                Email
+            </div>
+            <input type="email" class="iptbox" name="email" id="email" required>
+        </div>
+        <div class="formitem row">
+            <div class="formlabel">
+                Mobile
+            </div>
+            <input type="number" class="iptbox" name="mob" id="mob" required>
+        </div>
+        <div class="formitem row">
+            <div class="formlabel">
+                Sex
+            </div>
+          <select name="gender" class="iptbox" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="others">other</option>
+          </select>
+        </div>
+        <div class="formitem row">
+            <div class="formlabel">
+                Interests
+            </div>
+            <div class="iptbox row">
+                <div class="option col">
+                    <input type="checkbox" class="iptbox" value="academics" name="interest" id="interestipt">
+                    Academics
+                </div>
+                <div class="option col">
+                    <input type="checkbox" class="iptbox" value="sports" name="interest" id="interestipt">
+                    Sports
+                </div>
+                <div class="option col">
+                    <input type="checkbox" class="iptbox" value="arts" name="interest" id="interestipt">
+                    Artforms
+                </div>
+                <div class="option col">
+                    <input type="checkbox" class="iptbox" value="other" name="interest" id="interestipt">
+                    Other
+                </div>
+            </div>
+           
+        </div>
+        <div class="formitem row">
+            <div class="formlabel">
+                Mode
+            </div>
+            <div class="iptbox row">
+                <div class="option col">
+                    <input type="radio" class="iptbox" value="online" name="mode" id="modeipt">
+                    Online
+                </div>
+                <div class="option col">
+                    <input type="radio" class="iptbox" value="offline" name="mode" id="modeipt">
+                    Offline
+                </div>
+                <div class="option col">
+                    <input type="radio" class="iptbox" value="Mixed" name="mode" id="imodeipt">
+                    Mixed
+                </div>
+                <div class="option col">
+                    <input type="radio" class="iptbox" value="None" name="mode" id="imodeipt">
+                    None
+                </div>
+            </div>
+          
+        </div>
+        <div class="formitem row">
+            <div class="formlabel">
+              
+            </div>
+            <div class="iptbox row">
+                <input type="reset" class="btn" value="Cancel">
+                <input type="submit" class="btn" value="Register">
+            </div>
+            
+        </div>
+    </form>
+</body>
+
+</html>

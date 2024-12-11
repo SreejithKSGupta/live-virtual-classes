@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../index.css">
+    <title>Photo gallery</title>
+    <script>
+        function getimg(user,video){
+            document.getElementById("userprofileimg").src = "../assets/users/"+user+".png";
+            
+            document.getElementById("introvideo").src = "../assets/"+video+".mp4";
+        }
+    </script>
+    <style>
+        #imagegallery{
+            height: 98%;
+            width: 100%;
+        }
+        #imgbox{
+            width: 25%;
+            height: 98%;
+        }
+        .section{
+            width: 25%;
+        }
+        #imgbox img {
+            width: 90%;
+            margin-top: auto;
+            margin-bottom: auto;
+            aspect-ratio: 3/4;
+        }
+        table{
+            width: 50%;
+            height: 98%;
+        }
+        tr td:nth-child(1){
+            color: rgb(121, 121, 247);
+            cursor: pointer;
+            font-size: 130%;
+        }
+   
+        @media only screen and (max-width: 600px) {
+            #imagegallery{
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+ }
+    </style>
+</head>
+<body>
+    <div id="imagegallery" class="row" >
+      <table>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Experience</th>
+        </tr>
+        <tr>
+            <td onclick="getimg(`janedoe`,`intro`)">Jane Doe</td>
+            <td>Senior Angular Developer</td>
+            <td>9 Years</td>
+        </tr>
+        <tr>
+            <td onclick="getimg(`janesmith`,`intro`)">JJane Smith</td>
+            <td>Senior ReactDeveloper</td>
+            <td>11 Years</td>
+        </tr>
+        <tr>
+            <td onclick="getimg(`turing`,`intro`)">Alan Turing</td>
+            <td>GEN AI reasercher</td>
+            <td>15 Years</td>
+        </tr>
+      </table>
+      <div id="imgbox" class="col">
+        <img id="userprofileimg" src="../assets/users/default.png" alt="image">
+      </div>
+      <video controls class="section" src="" id="introvideo">select a user</video>
+    </div>
+</body>
+</html>

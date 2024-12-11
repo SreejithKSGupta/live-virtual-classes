@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../index.css">
+    <title>Blog</title>
+    <style>
+        #blogheader{
+            width: 100%;
+            background-color:var(--color2);
+            /* background-color: var(--headerbg); */
+        }
+        #blogcontent{
+            height: 80%;
+            width: 100%;
+        }
+        .blogitem{
+            padding: 15px 0px;
+            width: 15%;
+            margin: 5px;
+            /* background-color: var(--color2); */
+            /* filter: brightness(80%); */
+        }
+    </style>
+    <script>
+       function takeblog(blog){
+            document.getElementById("blogcontent").src = './blogposts/'+blog+`.html`;
+        }
+    </script>
+</head>
+<body>
+    <div id="blogheader" class="row">
+        <div class="blogitem btn" title="AI- next revolution in computer science" onclick="takeblog(`ai`)">AI</div>
+        <div class="blogitem btn" title="AI- next revolution in computer science"  onclick="takeblog(`genai`)">GEN AI</div>
+        <div class="blogitem btn" title="AI- next revolution in computer science" onclick="takeblog(`llm`)">LLM</div>
+        <div class="blogitem btn" title="AI- next revolution in computer science" onclick="takeblog(`dl`)">DL</div>
+        <div class="blogitem btn" title="AI- next revolution in computer science" onclick="takeblog(`copilot`)">Copilot</div>
+    </div>
+    <iframe id="blogcontent" src="./blogposts/ai.html" frameborder="0"></iframe>
+</body>
+</html>

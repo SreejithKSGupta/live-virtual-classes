@@ -1,0 +1,157 @@
+:root {
+    --padding: 5px;
+    --brad:2px;
+    --primary: rgb(27, 221, 205); 
+    --secondary: rgb(0, 77, 0); 
+    --background-color : #ffffff;
+    --background-shade : #c2c2c2;
+    --color : #000;
+    --sectionbg: #dddddd;
+    --color2: #333333;
+    --darkbgfontcolor: #fff;
+    --headerbg: rgb(0, 0, 100); 
+    --headercolor: rgb(0, 59, 59);
+    --headercolor2: rgb(103, 124, 8);
+    --strongcolor: rgb(255, 11, 235);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color : #ffffff;
+    }
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    overscroll-behavior: none;
+    overflow:scroll;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--background-color);
+    color:var(--color);
+    font-size: 120%;
+}
+.full {
+    height: 100%;
+    width: 100%;
+}
+.bfltxt{
+    font-size: larger;
+    padding: 10px;
+    line-height: 120%;
+    vertical-align: center;
+    align-content: center;
+    font-style: italic;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.btn {
+    cursor: pointer;
+    font-style: italic;
+    text-align: center;
+    align-content: center;
+    border-radius: var(--brad);
+    transition-duration: 300ms;
+    user-select: none;
+    padding: 2px 20px;
+    background-color: rgba(1, 185, 1, 0.678);
+    font-size: 80%;
+    color: white;
+    box-shadow: 10px black;
+} 
+.btn:hover {
+    scale: 1.1;
+    filter: brightness(110%);
+    color: white;
+    font-weight: bold
+}
+.btn:active {
+    scale: 0.95;
+    filter: brightness(80%);
+}
+
+input, select, textarea{
+    height: 10vh;
+    padding: 3px 3px 3px 15px;
+    outline: none;
+    border: 0px;
+    border-radius: var(--brad);
+    font-size: 110%;
+    background-color:#ccc;
+}
+
+input:active, select:active{
+    outline: none;
+}
+
+table{
+    border-color: aqua;
+    font-size: 70%;
+    user-select: none;
+}
+td{
+    text-align: center;
+    border-color: aqua;
+    padding: 5px;
+}
+tr{
+    padding-top: 10px;
+    border-color: aqua;
+}
+tr:nth-child(even){
+    background-color: rgba(243, 243, 243, 0.103);
+}
+tr:nth-child(odd){
+    background-color: rgba(243, 243, 243, 0.048);
+}
+th{
+    background-color:var(--headerbg);
+    font-size: 100%;
+    font-weight: bold;
+    color: var(--darkbgfontcolor)
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 120%;
+    }
+   .row {
+    flex-wrap: wrap;
+   }
+   .btn {
+    padding: 5px 10px;
+    font-size: 70%;
+    min-width: 80px;
+    margin: 2px;
+} 
+input, select{
+    padding: 3px 3px 3px 15px;
+    outline: none;
+    border: 0px;
+    font-size: 90%;
+}
+#footer1{
+    flex-direction: column;
+}
+}
