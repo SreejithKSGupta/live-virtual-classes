@@ -16,11 +16,24 @@
             width: 100%;
         }
         .blogitem{
-            padding: 15px 0px;
-            width: 15%;
-            margin: 5px;
+            padding: 0px;
+            width: 12%;
             /* background-color: var(--color2); */
             /* filter: brightness(80%); */
+        }
+        @media only screen and (max-width: 600px) {
+            #blogheader{
+            height: 10%;
+            flex-wrap: nowrap;
+        }
+        .blogitem{
+            width: 18%;
+            height: 90%;
+            min-width:50px;
+        }
+        #blogcontent{
+            height: 90%;
+        }
         }
     </style>
     <script>

@@ -14,7 +14,7 @@ body {
 }
 
 .txt {
-    padding-left: 50px;
+    padding-left: 50px; 
 }
 
 table {
@@ -35,3 +35,17 @@ tr:nth-child(even){
 td:nth-child(1){
     background-color: rgba(0, 0, 0, 0.226);
 }
+
+
+@media only screen and (max-width: 600px) {
+     body {
+        padding: 5px;
+     }
+     .txt {
+        padding-left: 5px;
+    }
+    
+    table {
+        width: 96%;
+    }
+    }

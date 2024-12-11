@@ -113,6 +113,7 @@ iframe {
  #welcometext{
     width: 90%;
     padding: 20px 0px;
+    font-size: 100%;
  }
  #content{
     flex-direction: column;
@@ -130,7 +131,7 @@ iframe {
     font-size: 120%;
 }
  iframe {
-    min-height: 50vh;
+    height: 68vh;
  }
 
  .footeritem{
