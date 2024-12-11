@@ -2,7 +2,7 @@
     --padding: 5px;
     --brad:2px;
     --primary: rgb(27, 221, 205); 
-    --secondary: rgb(0, 77, 0); 
+    --secondary: rgb(2, 161, 2); 
     --background-color : #ffffff;
     --background-shade : #c2c2c2;
     --color : #000;
@@ -71,7 +71,7 @@ body {
     transition-duration: 300ms;
     user-select: none;
     padding: 2px 20px;
-    background-color: rgba(1, 185, 1, 0.678);
+    background-color: var(--secondary);
     font-size: 80%;
     color: white;
     box-shadow: 10px black;

@@ -9,11 +9,24 @@
    <style>
       .item {
          width: 20%;
-         background-color: rgb(3, 3, 56);
          text-decoration: none;
-         line-height: 200%;
-         color: white;
+         border-radius: var(--brad);
       }
+      @media only screen and (max-width: 600px) {
+             .row {
+                flex-direction: column;
+                width: 100%;
+             }
+             .section {
+                width: 90%;
+            }
+            #contactbox{
+               width: 100%;
+            }
+            .item {
+               width: 90%;
+            }
+        }
    </style>
 </head>
 

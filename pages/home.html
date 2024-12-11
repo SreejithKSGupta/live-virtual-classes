@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../index.css">
     <title>home</title>
     <style>
-        .section{
+        .section {
             width: 50%;
             padding: 5px;
             font-size: 100%;
             vertical-align: middle;
         }
+        @media only screen and (max-width: 600px) {
+             .row {
+                flex-direction: column;
+                width: 100%;
+             }
+             .section {
+                width: 90%;
+            }
+        }
     </style>
 </head>
+
 <body>
-    <div class="row full">
-<p class="bfltxt section">Welcome to LVC, your Live Virtual Class! Created by Sreejith KS 
-    from Bangalore, LVC is designed to be your ultimate online learning
-    companion. 
-<br/><br/>
-    Whether you're a student, a professional, or a lifelong 
-    learner, our platform offers interactive and engaging virtual classes 
-    tailored to your needs. Join us and transform your learning experience
-     from the comfort of your home.
-    </p>
-    <video  class="section" src="../assets/intro.mp4" autoplay id="introvideo"></video>
-</div>
+    <div  class="row full">
+        <p class="bfltxt section">Welcome to LVC, your Live Virtual Class! Created by Sreejith KS
+            from Bangalore, LVC is designed to be your ultimate online learning
+            companion.
+            <br /><br />
+            Whether you're a student, a professional, or a lifelong
+            learner, our platform offers interactive and engaging virtual classes
+            tailored to your needs. Join us and transform your learning experience
+            from the comfort of your home.
+        </p>
+        <video class="section" src="../assets/intro.mp4" autoplay id="introvideo"></video>
+    </div>
 </body>
+
 </html>
