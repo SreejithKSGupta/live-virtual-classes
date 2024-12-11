@@ -184,7 +184,8 @@ iframe {
 } 
 
 #heroimg{
-    font-size: x-large;
+    font: size 300%;
+    text-align: center;
 
 }
 
