@@ -1,5 +1,5 @@
 body {
-    background-image: url("./assets/heroimg.png");
+    background-image: url("./assets/designer.png");
     background-size: cover;
     overflow: scroll;
     scroll-behavior: smooth;
@@ -10,30 +10,46 @@ body {
     overflow: scroll;
 }
 #heroimg{
-    height: 30vh;
+    height: 50vh;
     width: 100vw;
     font-size: 250%;
     color: var(--headercolor);
-    text-align: right;
-    display: flex;
-    flex-direction: column;
-    align-items:center ;
-    justify-content: center;
-    font-weight: bolder;
-    text-shadow: 15px 15px 10px red;
-    background-color: rgba(8, 8, 8, 0.274);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 900;
+    background-color: rgba(8, 8, 8, 0.699);
     backdrop-filter: blur(3px);
-    animation-name: example;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
 }
 
 
 
-#header {
+#mainheader {
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 10vh;
+    width: 100%;
+    justify-content: space-between;
     background-color:var(--headerbg);
-    
+    color: white;
+    padding: 0px 20px;
+    font-weight: bolder;
+    z-index: 5;
+}
+
+#logobox{
+  color: white;
+  width: 25%;
+  align-items: flex-start;
+}
+
+#logoimg{
+  height:5vh;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+#header {
+    width: clamp(500px,70%,700px);
 }
 
 
@@ -50,7 +66,8 @@ body {
 }
 .headeritem{
     height: 70%;
-    width: 12%;
+    width: 20%;
+    background-color: rgba(245, 222, 179, 0);
 }
 #welcometext{
     width: 30%;
@@ -140,7 +157,7 @@ iframe {
     padding: 10px;
  }
 
- header , .headeritem{
+ #header , .headeritem{
     display: none;
  }
  #mheader {
@@ -148,9 +165,10 @@ iframe {
     flex-direction: column;
     position: absolute;
     right: 0px;
+    height: 90vh;
     top: 0px;
     padding: 20px;
-    font-size: 120%;
+    font-size: 180%;
     backdrop-filter: blur(10px);
     z-index: 5;
     background-color: rgba(1, 1, 66, 0.9466);
@@ -160,26 +178,14 @@ iframe {
 #menubar{
     display:flex;
     flex-direction: column;
-    position: absolute;
-    right: 0px;
     width: 20vw;
-    top: 0px;
-    padding: 20px;
-    font-size: 180%;
+    font-size: 300%;
     background-color: rgba(255, 222, 173, 0);
-    box-shadow: 100px red;
-    animation-name:slidefromright;
-    animation-duration: 1000ms;
 } 
 
-@keyframes slidefromright {
-    0%{
-        right: -20vw;
-    }
-    100%{
-        right: 0px;
-    }
-    
+#heroimg{
+    font-size: x-large;
+
 }
 
  }
