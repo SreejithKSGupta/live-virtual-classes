@@ -15,11 +15,23 @@
     --strongcolor: rgb(255, 11, 235);
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background-color : #ffffff;
+.dark-mode{
+        --padding: 5px;
+        --brad:2px;
+        --primary: rgb(0, 179, 164); 
+        --secondary: rgb(73, 74, 117); 
+        --background-color : #000000;
+        --background-shade : #161616;
+        --color : #000;
+        --sectionbg: #3b3b3b;
+        --color2: #333333;
+        --darkbgfontcolor: #fff;
+        --headerbg: rgb(0, 88, 88); 
+        --headercolor: rgb(2, 190, 190);
+        --headercolor2: rgb(103, 124, 8);
+        --strongcolor: rgb(255, 11, 235);
     }
-}
+
 
 * {
     margin: 0px;
