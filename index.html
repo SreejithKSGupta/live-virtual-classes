@@ -2,105 +2,162 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="An online learning platform">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An online learning platform">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 
-    <title>Intro</title>
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <link rel="favicon" type="img/webp" href="./assets/logo.webp">
+  <title>Intro</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="favicon" type="img/webp" href="./assets/logo.webp">
 
-    <meta name=”color-scheme” content="light dark" />
-    
-    <script>
-        function goto(location, heading, subheading) {
-            if(document.getElementById("mheader").style.display=="flex"){
-                document.getElementById("mheader").style.display= "none";
-            }
-            document.getElementById("contentframe").src = "pages/" + location + ".html";
-            document.getElementById("pageheading").innerHTML = heading;
-            document.getElementById("pagesubtitle").innerHTML = subheading;
-        }
-        function gotocourse(location, heading, subheading) {
-            document.getElementById("contentframe").src = "pages/courses/" + location + ".html";
-            document.getElementById("pageheading").innerHTML = heading;
-            document.getElementById("pagesubtitle").innerHTML = subheading;
-        }
-        function showhidemenu() {
-            if(document.getElementById("mheader").style.display=="flex"){
-                document.getElementById("mheader").style.display= "none";
-            }
-            else {
-               document.getElementById("mheader").style.display= "flex";
-            }
-            
+  <meta name=”color-scheme” content="light dark" />
 
-        }
-        
-        function tooglecolor (){
-            console.log("hello");
-            document.body.classList.toggle('dark-mode');
-        }
+  <script>
+    function goto(location, heading, subheading) {
+      document.getElementById("contentframe").src = "pages/" + location + ".html";
+      document.getElementById("pageheading").innerHTML = heading;
+      document.getElementById("pagesubtitle").innerHTML = subheading;
+    }
+  </script>
+  <style>
+    ::-webkit-scrollbar{
+    display: none;
+}
 
-    </script>
+/* Make the dropdown open on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* Optional: Add a smooth transition for the dropdown */
+  .nav-item.dropdown .dropdown-menu {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .nav-item.dropdown:hover .dropdown-menu {
+    opacity: 1;
+  }
+  </style>
 </head>
 
 <body>
-    <div id="body">
-     
-        <header class="row" id="mainheader">
-            <div id="logobox" class="col">
-                 <img  id="logoimg" src="./assets/logo.webp" alt="LVC">
-                 LVC
-            </div>
-        <div id="header" class="row">
-            <div class="headeritem btn " onclick="goto(`home`, `Welcome to LVC!!!`,`Learn on the Go`)">Home</div>
-            <div class="headeritem btn" onclick="goto(`courses`,`Courses`, `Upskill like a Pro`)">courses</div>
-            <div class="headeritem btn" onclick="goto(`register`, `Registration`,`Join the pack`)">Register</div>
-            <div class="headeritem btn" onclick="goto(`photogalery`,`Gallery`,`Meet the Mentors`)">Gallery</div>
-            <div class="headeritem btn" onclick="goto(`blog`,`Blogs`,`More about us`)">Blog</div>
-            <div class="headeritem btn" onclick="goto(`help`,`Help`,`Stuck somewhere? `)">Help</div>
-            <div class="headeritem btn" onclick="goto(`contact`,`Contact Us`,`Connect with us`)">Contact</div>
-        </div>
-        <div id="menubar" onclick="showhidemenu()" class="btn">
-            <p class="sansserif">&#8801;</p>
-        </div>
-        <div id="mheader" class="column">
-            <div class="mheaderitem btn " onclick="goto(`home`, `Welcome to LVC!!!`,`Learn on the Go`)">Home</div>
-            <div class="mheaderitem btn" onclick="goto(`courses`,`Courses`, `Upskill like a Pro`)">courses</div>
-            <div class="mheaderitem btn" onclick="goto(`register`, `Registration`,`Join the pack`)">Registration</div>
-            <div class="mheaderitem btn" onclick="goto(`photogalery`,`Gallery`,`Meet the Mentors`)">Gallery</div>
-            <div class="mheaderitem btn" onclick="goto(`blog`,`Blogs`,`More about us`)">Blog</div>
-            <div class="mheaderitem btn" onclick="goto(`help`,`Help`,`Stuck somewhere? `)">Help</div>
-            <div class="mheaderitem btn" onclick="goto(`contact`,`Contact Us`,`Connect with us`)">Contact</div>
-            <button id="toggleButton" onclick="tooglecolor()">Toggle Mode</button>
-        </div>
-    </header>
-    <div id="heroimg" class="row">
-        Live Virtual Classes
+
+  <nav class="navbar navbar-expand-lg  bg-body-tertiary fixed-top container-fluid px-4" data-bs-theme="dark">
+    <a class="navbar-brand" href="#">
+      <img src="./assets/logo.webp" alt="Logo" width="30" height="24" class="d-inline-block align-text-top rounded">
+      LVC
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" onclick="goto(`home`,`welcome`,`to LVC`)">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="goto(`photogalery`,`Meet`,`our mentors`)">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="goto(`register`,`Join`,`the group`)">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="goto(`help`,`we're`,`Here for yo`)">Help</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="goto(`contact`,`Connect`,`with us`)">Contact</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" onclick="goto(`courses`,`upskill`,`yourself`)" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            courses
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#" onclick="goto(`courses/genai`,`All`,`the hype`)">Generative AI</a></li>
+            <li><a class="dropdown-item" href="#" onclick="goto(`courses/mernstack`,`Don't`,`be MEAN`)">MERN stack</a></li>
+            <li><a class="dropdown-item" href="#" onclick="goto(`courses/meanstack`,`Angular`,`pro`)">MEAN stack</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><span class="dropdown-item" href="#">new courses comming soon</span></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" onclick="goto(`blog`,`Read`,`our blogs`)" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Blogs
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#" onclick="goto(`blogposts/ai`,`Artificial`,`Intelligence`)">Artificial Intelligence</a></li>
+            <li><a class="dropdown-item" href="#" onclick="goto(`blogposts/copilot`,`Fully`,`Microsoft`)">Copilot</a></li>
+            <li><a class="dropdown-item" href="#" onclick="goto(`blogposts/dl`,`Deep`,`Learning`)">Deep Learning</a></li>
+            <li><a class="dropdown-item" href="#" onclick="goto(`blogposts/llm`,`Large`,`the Language Model`)">Large language models</a></li>
+            <li><a class="dropdown-item" href="#" onclick="goto(`blogposts/genai`,`Generative`,`AI`)">Generative AI</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><span class="dropdown-item" href="#">Write Blogs</span></li>
+          </ul>
+        </li>
+      </ul>
     </div>
-        <div id="content" class="row">
-            <div id="welcometext">
-                <H2 id="pageheading">Welcome to LVC!!!</H2>
-                <h5 id="pagesubtitle">Learn on the Go</h4>
-            </div>
-            <iframe src="./pages/blog.html" title="content" id="contentframe" frameborder="0"></iframe>
-        </div>
-        <footer id="footer" class="col">
-            <div class="row" id="footer1">
-                <div id="fhead">Most important courses for the professional</div>
-                <div class="footeritem btn" onclick="gotocourse(`meanstack`, `MEAN`,`Angular pro`)">MEAN Stack</div>
-                <div class="footeritem btn" onclick="gotocourse(`mernstack`,`MERN`,`Don't be mean`)">MERN Stack</div>
-                <div class="footeritem btn" onclick="gotocourse(`genai`,`Generative AI`,`It's all about the Hype`)">GEN AI
-                </div>
-            </div>
-            <div id="footer2">
-                Website designed and developerd by <a name="github" title="github" href="https://github.com/SreejithKSGupta">sreejith KS.</div> with
-                <span> &#10084; </span> and html
-            </div>
-        </footer>
+</nav>
+
+
+  <div class="bg-image" style="background-image: url('./assets/designer.webp'); height: 40vh;">
+    Live Virtual Classes
+  </div>
+
+
+<div class="container-fluid d-flex flex-column flex-lg-row" style="min-height: 80vh;">
+  <div id="welcometext" class="d-flex flex-column justify-content-center align-items-center p-3" style="min-width:280px;"> 
+    <h2 id="pageheading">Welcome to LVC!!!</h2>
+    <h5 id="pagesubtitle">Learn on the Go</h5>
+  </div>
+  <iframe src="./pages/home.html" title="content" id="contentframe" class="flex-grow-1" frameborder="0"></iframe>
+</div>
+
+<footer id="footer" class="container-fluid d-flex flex-column"  data-bs-theme="dark">
+  <div class="row d-flex align-items-center">
+    <div class="col-12 col-md-6 text-center text-md-left">
+        <div id="fhead" class="h4 mb-0">Most important courses for the professional</div>
     </div>
+    <div class="col-12 col-md-6 d-flex justify-content-around">
+        <div class="card footeritem" style="width: 18rem;">
+            <div class="card-body text-center">
+                <h5 class="card-title">MEAN Stack</h5>
+                <button class="btn btn-primary" onclick="goto('courses/meanstack', 'MEAN', 'Angular pro')">Learn More</button>
+            </div>
+        </div>
+        <div class="card footeritem" style="width: 18rem;">
+            <div class="card-body text-center">
+                <h5 class="card-title">MERN Stack</h5>
+                <button class="btn btn-primary" onclick="goto('courses/mernstack', 'MERN', 'Don\'t be mean')">Learn More</button>
+            </div>
+        </div>
+        <div class="card footeritem" style="width: 18rem;">
+            <div class="card-body text-center">
+                <h5 class="card-title">GEN AI</h5>
+                <button class="btn btn-primary" onclick="goto('courses/genai', 'Generative AI', 'It\'s all about the Hype')">Learn More</button>
+            </div>
+        </div>
+    </div>
+</div>
+  <div class="row text-center" >
+    <div class="col-12">
+      <p class="mb-0">Website designed and developed by <a href="https://github.com/SreejithKSGupta" title="GitHub">Sreejith KS</a> with <span>&#10084;</span> and HTML</p>
+    </div>
+  </div>
+</footer>
+
+
 </body>
 
 </html>

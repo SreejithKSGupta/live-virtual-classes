@@ -3,50 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../index.css">
     <title>Blog</title>
-    <style>
-        #blogheader{
-            width: 100%;
-            height: 10%;
-            background-color:var(--headerbg);
-            /* background-color: var(--headerbg); */
-        }
-        #blogcontent{
-            height: 90%;
-            width: 100%;
-        }
-        .blogitem{
-            padding: 0px;
-            width: 12%;
-            height: 90%;
-            background-color:#00000000;
-            /* filter: brightness(80%); */
-        }
-        .blogitem:hover {
-            background-color: rgba(0, 0, 0, 0.685);
-        }
-        @media only screen and (max-width: 600px) {
-        .blogitem{
-            width: 18%;
-            min-width:50px;
-        }
-        }
-    </style>
+   
     <script>
-       function takeblog(blog){
-            document.getElementById("blogcontent").src = './blogposts/'+blog+`.html`;
+        const blogPosts = [
+            {
+                title: 'AI',
+                description: 'AI: The next revolution in computer science. Explore the world of Artificial Intelligence.',
+                image: '../assets/hero.webp',
+                slug: 'ai'
+            },
+            {
+                title: 'Generative AI',
+                description: 'Discover the power of Generative AI and its impact on various industries.',
+                image: '../assets/logo.webp',
+                slug: 'genai'
+            },
+            {
+                title: 'LLM',
+                description: 'Learn about Large Language Models (LLM) and their influence on modern NLP.',
+                image: `../assets/logo.webp`,
+                slug: 'llm'
+            },
+            {
+                title: 'Deep Learning',
+                description: 'Dive into Deep Learning techniques that are transforming AI.',
+                image: '../assets/hero.webp',
+                slug: 'dl'
+            },
+            {
+                title: 'Copilot',
+                description: 'Explore Microsoft\'s Copilot technology and its implications in productivity tools.',
+                image: '../assets/designer.webp',
+                slug: 'copilot'
+            }
+        ];
+
+        function generateBlogCards() {
+            const container = document.getElementById("blog-container");
+
+            blogPosts.forEach(post => {
+                const cardHTML = `
+                    <div class="col">
+                        <div class="card shadow-sm h-100" style="cursor: pointer;" onclick="takeblog('${post.slug}')">
+                            <img src="${post.image}" class="card-img-top" alt="${post.title}">
+                            <div class="card-body">
+                              
+                                <p class="card-text">${post.description}</p>
+                            </div>
+                            <div class="card-footer text-muted">
+                                Read more
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += cardHTML;
+            });
         }
+
+        function takeblog(blog) {
+            window.location.href = './blogposts/' + blog + '.html';
+        }
+
+        window.onload = generateBlogCards;
     </script>
 </head>
 <body>
-    <div id="blogheader" class="row">
-        <div class="blogitem btn" title="AI- next revolution in computer science" onclick="takeblog(`ai`)">AI</div>
-        <div class="blogitem btn" title="AI- next revolution in computer science"  onclick="takeblog(`genai`)">GEN AI</div>
-        <div class="blogitem btn" title="AI- next revolution in computer science" onclick="takeblog(`llm`)">LLM</div>
-        <div class="blogitem btn" title="AI- next revolution in computer science" onclick="takeblog(`dl`)">DL</div>
-        <div class="blogitem btn" title="AI- next revolution in computer science" onclick="takeblog(`copilot`)">Copilot</div>
+    <div class="container my-5">
+        <div class="row row-cols-1 row-cols-md-4 g-4" id="blog-container">
+        </div>
     </div>
-    <iframe id="blogcontent" src="./blogposts/ai.html" frameborder="0"></iframe>
 </body>
 </html>
