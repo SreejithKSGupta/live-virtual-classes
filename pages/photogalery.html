@@ -28,29 +28,35 @@
     </style>
 </head>
 <body>
-    <div class="container-fluid">
-      <table class="table table-striped  table-dark table-bordered table-hover">
-        <tr>
-            <th>Name</th>
-            <th>Position</th>
-        </tr>
-        <tr>
-            <td onclick="getimg(`janedoe`,`intro`)">Jane Doe</td>
-            <td>Angular Developer</td>
-        </tr>
-        <tr>
-            <td onclick="getimg(`janesmith`,`intro`)">JJane Smith</td>
-            <td>eact Developer</td>
-        </tr>
-        <tr>
-            <td onclick="getimg(`turing`,`intro`)">Alan Turing</td>
-            <td>easercher</td>
-        </tr>
-      </table>
-      <div class="row">
-        <img id="userprofileimg"  rounded mx-auto d-block class="img-fluid" src="../assets/users/default.webp" alt="image">
-        <video controls src="" id="introvideo">select a user</video>
-      </div>
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table table-striped table-dark table-bordered table-hover w-100">
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                    </tr>
+                    <tr>
+                        <td onclick="getimg('janedoe','intro')">Jane Doe</td>
+                        <td>Angular Developer</td>
+                    </tr>
+                    <tr>
+                        <td onclick="getimg('janesmith','intro')">Jane Smith</td>
+                        <td>React Developer</td>
+                    </tr>
+                    <tr>
+                        <td onclick="getimg('turing','intro')">Alan Turing</td>
+                        <td>Researcher</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                <img id="userprofileimg" class="img-fluid rounded" src="../assets/users/default.webp" alt="image">
+            </div>
+            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                <video controls class="w-100" id="introvideo">Select a user</video>
+            </div>
+        </div>
     </div>
 </body>
 </html>
