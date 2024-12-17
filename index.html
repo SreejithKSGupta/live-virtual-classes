@@ -14,7 +14,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script>
-    function goto(location, heading, subheading) {
+    function goto(location) {
       document.getElementById("contentframe").src = "pages/" + location + ".html";
     }
   </script>
@@ -65,28 +65,28 @@
           <a class="nav-link active" aria-current="page" href="#" onclick="goto(`home`,`welcome`,`to LVC`)">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" onclick="goto(`photogalery`,`Meet`,`our mentors`)">Gallery</a>
+          <a class="nav-link" href="#" onclick="goto(`photogalery`)">Gallery</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" onclick="goto(`register`,`Join`,`the group`)">Register</a>
+          <a class="nav-link" href="#" onclick="goto(`register`)">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" onclick="goto(`help`,`we're`,`Here for yo`)">Help</a>
+          <a class="nav-link" href="#" onclick="goto(`help`)">Help</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" onclick="goto(`contact`,`Connect`,`with us`)">Contact</a>
+          <a class="nav-link" href="#" onclick="goto(`contact`)">Contact</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" onclick="goto(`courses`,`upskill`,`yourself`)" role="button"
+          <a class="nav-link dropdown-toggle" href="#" onclick="goto(`courses`)" role="button"
             data-bs-toggle="dropdown" aria-expanded="false">
             courses
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#" onclick="goto(`courses/genai`,`All`,`the hype`)">Generative AI</a>
+            <li><a class="dropdown-item" href="#" onclick="goto(`courses/genai`)">Generative AI</a>
             </li>
-            <li><a class="dropdown-item" href="#" onclick="goto(`courses/mernstack`,`Don't`,`be MEAN`)">MERN stack</a>
+            <li><a class="dropdown-item" href="#" onclick="goto(`courses/mernstack`)">MERN stack</a>
             </li>
-            <li><a class="dropdown-item" href="#" onclick="goto(`courses/meanstack`,`Angular`,`pro`)">MEAN stack</a>
+            <li><a class="dropdown-item" href="#" onclick="goto(`courses/meanstack`)">MEAN stack</a>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -95,20 +95,20 @@
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" onclick="goto(`blog`,`Read`,`our blogs`)" role="button"
+          <a class="nav-link dropdown-toggle" href="#" onclick="goto(`blog`)" role="button"
             data-bs-toggle="dropdown" aria-expanded="false">
             Blogs
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#" onclick="goto(`blogposts/ai`,`Artificial`,`Intelligence`)">Artificial
+            <li><a class="dropdown-item" href="#" onclick="goto(`blogposts/ai`)">Artificial
                 Intelligence</a></li>
-            <li><a class="dropdown-item" href="#" onclick="goto(`blogposts/copilot`,`Fully`,`Microsoft`)">Copilot</a>
+            <li><a class="dropdown-item" href="#" onclick="goto(`blogposts/copilot`)">Copilot</a>
             </li>
-            <li><a class="dropdown-item" href="#" onclick="goto(`blogposts/dl`,`Deep`,`Learning`)">Deep Learning</a>
+            <li><a class="dropdown-item" href="#" onclick="goto(`blogposts/dl`)">Deep Learning</a>
             </li>
-            <li><a class="dropdown-item" href="#" onclick="goto(`blogposts/llm`,`Large`,`the Language Model`)">Large
+            <li><a class="dropdown-item" href="#" onclick="goto(`blogposts/llm`)">Large
                 language models</a></li>
-            <li><a class="dropdown-item" href="#" onclick="goto(`blogposts/genai`,`Generative`,`AI`)">Generative AI</a>
+            <li><a class="dropdown-item" href="#" onclick="goto(`blogposts/genai`)">Generative AI</a>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -120,9 +120,7 @@
     </div>
   </nav>
 
-
-
-  <iframe src="./pages/home.html"  title="content"  frameborder="0"></iframe>
+  <iframe src="./pages/photogalery.html"  id="contentframe" title="content"  frameborder="0"></iframe>
   
   <footer id="footer" class="container-fluid d-flex flex-column"
     style="background-color: rgb(39, 39, 39); color: white;" data-bs-theme="dark" style="min-height:10vh;">
@@ -132,14 +130,14 @@
       </div>
       <div class="col-12 col-md-6 d-flex justify-content-around  py-2">
         <div class="card footeritem mx-4" style="width: 18rem;">
-          <button class="btn btn-primary" onclick="goto('courses/meanstack', 'MEAN', 'Angular pro')">MEAN</button>
+          <button class="btn btn-primary" onclick="goto('courses/meanstack')">MEAN</button>
         </div>
         <div class="card footeritem mx-4" style="width: 18rem;">
-          <button class="btn btn-primary" onclick="goto('courses/mernstack', 'MERN', 'Don\'t be mean')">MERN</button>
+          <button class="btn btn-primary" onclick="goto('courses/mernstack')">MERN</button>
         </div>
         <div class="card footeritem mx-4" style="width: 18rem;">
           <button class="btn btn-primary"
-            onclick="goto('courses/genai', 'Generative AI', 'It\'s all about the Hype')">GEN AI</button>
+            onclick="goto('courses/genai')">GEN AI</button>
         </div>
       </div>
     </div>

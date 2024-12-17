@@ -6,45 +6,78 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" type="text/css" href="../index.css">
    <title>Help</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+
    <style>
-      .item {
-         width: 20%;
-         text-decoration: none;
-         border-radius: var(--brad);
+      .row div {
+         align-items: center;
+         padding: 20px;
       }
-      @media only screen and (max-width: 600px) {
-             .row {
-                flex-direction: column;
-                width: 100%;
-             }
-             .section {
-                width: 90%;
-            }
-            #contactbox{
-               width: 100%;
-            }
-            .item {
-               width: 90%;
-            }
-        }
+
+      .btn {
+         width: 100%;
+         background-color: blue;
+         padding: 10px;
+         color: white;
+         margin-bottom: 10px;
+      }
+
+      .btn:active {
+         background-color: rgb(1, 1, 63);
+      }
+
+      .bfltxt {
+         text-align: justify;
+      }
+
+      @media (max-width: 768px) {
+         .col-3, .col-6 {
+            flex: 0 0 100%;
+            max-width: 100%;
+         }
+      }
    </style>
 </head>
 
 <body>
-   <div class="row full">
-      <p class="bfltxt">
-         Need assistance? We're here to help! At LVC, we strive to ensure your
-         learning journey is smooth and hassle-free.<br /> <br>Whether you have questions
-         about our courses, need technical support, or require guidance on how
-         to make the most of our platform, our support team is ready to assist
-         you.<br /><br /> Reach out to us anytime, and we'll be happy to help you succeed.
-      </p>
-      <div id="contactbox" class="row">
-         <a class="item btn" href="tel:+7025692254">Phone</a>
-         <a class="item btn" href="mailto:sreejithksgupta2255@gmail.com">email</a>
-         <a class="item btn" href="http://twitter.com">twitter</a>
-         <a class="item btn" href="http://wa.me/7025692254">whatsapp</a>
+   <div class="container">
+      <div class="row">
+         <div class="col-12 text-center my-4">
+            <h1>Welcome to LVC Support</h1>
+         </div>
+         <div class="col-3">
+            <h2>Blog Posts</h2>
+            <a class="btn" href="./blogposts/ai.html">AI</a>
+            <a class="btn" href="./blogposts/copilot.html">Copilot</a>
+            <a class="btn" href="./blogposts/dl.html">Deep Learning</a>
+            <a class="btn" href="./blogposts/llm.html">LLMs</a>
+            <a class="btn" href="./blogposts/genai.html">Generative AI</a>
+         </div>
+         <div class="col-6">
+            <h2>How Can We Help?</h2>
+            <p class="bfltxt">
+               Need assistance? We're here to help! At LVC, we strive to ensure your learning journey is smooth and
+               hassle-free.<br /><br />
+               Whether you have questions about our courses, need technical support, or require guidance on how to make
+               the most of our platform, our support team is ready to assist you.<br /><br />
+               Reach out to us anytime, and we'll be happy to help you succeed. Our dedicated team is available 24/7 to
+               provide you with the support you need. Don't hesitate to contact us through any of the following methods:
+            </p>
+         </div>
+         <div class="col-3">
+            <h2>Contact Us</h2>
+            <a class="btn" href="tel:+7025692254">Phone</a>
+            <a class="btn" href="mailto:sreejithksgupta2255@gmail.com">Email</a>
+            <a class="btn" href="http://twitter.com">Twitter</a>
+            <a class="btn" href="http://wa.me/7025692254">WhatsApp</a>
+            <a class="btn" href="http://facebook.com">Facebook</a>
+         </div>
       </div>
+   </div>
 </body>
 
 </html>
