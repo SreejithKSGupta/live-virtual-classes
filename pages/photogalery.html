@@ -24,7 +24,7 @@
             const galleryContainer = document.getElementById('gallery');
             galleryImages.forEach(image => {
                 const imgItem = document.createElement('div');
-                imgItem.className = 'col-md-4 col-sm-6 mb-4';
+                imgItem.className = 'col-md-3 col-sm-11 m-2';
                 imgItem.innerHTML = `<a href="${image.src}" data-lightbox="photos">
                                         <img src="${image.src}" class="img-fluid" title="${image.title}" alt="${image.alt}">
                                      </a>`;
@@ -43,23 +43,25 @@
             width: 0px;
         }
         #gallery {
-            width: 100vw;
+            width: 70vw;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
             padding: 10px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         a img {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-radius: 10px;
+            border-radius: 4px;
             width: 100%;
-            height: auto;
+            height: 100%;
             margin: 10px 0;
         }
 
         a:hover img {
-            transform: scale(1.1);
+            transform: scale(1.01);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
@@ -71,6 +73,7 @@
 </head>
 
 <body>
+    <h1 style="text-align: center; padding: 10px;">Gallery</h1>
     <div id="gallery" class="row"></div>
 </body>
 

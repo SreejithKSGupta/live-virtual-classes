@@ -1,16 +1,17 @@
 body {
     padding: 20px;
-    background-color: var(--background-color)
+    width: clamp(100px,90vw,800px);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .title {
-    font-size: larger;
+    font-size: x-large;
     text-align: left;
     padding: 10px 30px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    text-decoration: underline;
-    color: var(--headercolor);
+    color: rgb(7, 48, 82);
 }
 
 .txt {
@@ -18,14 +19,15 @@ body {
 }
 
 table {
-    width: 80%;
+    width: 96%;
     margin-left: auto;
     margin-right: auto;
 }
 
 td {
     text-align: left;
-    font-size: 130%;
+    padding: 5px 5px 5px 15px;
+    font-size: medium;
     background-color: rgba(0, 0, 0, 0.13);
 }
 
@@ -35,17 +37,3 @@ tr:nth-child(even){
 td:nth-child(1){
     background-color: rgba(0, 0, 0, 0.226);
 }
-
-
-@media only screen and (max-width: 600px) {
-     body {
-        padding: 5px;
-     }
-     .txt {
-        padding-left: 5px;
-    }
-    
-    table {
-        width: 96%;
-    }
-    }
