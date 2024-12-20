@@ -3,61 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <title>Courses</title>
     <style>
-        tr td:nth-last-child(1){
-            color: rgb(121, 121, 247);
-            cursor: pointer;
-            font-size: 130%;
+        strong {
+            line-height: 80%;
+        }
+        p {
+            margin-bottom: 0px;
         }
     </style>
 </head>
 <body>
-    <table class="table table-striped   table-dark table-bordered table-hover" >
-        <!-- table-dark -->
-        <thead class="thead-dark">
-            <tr>
-            <th>Course Name	</th>
-            <th>Course</th>
-            <th>Duration</th>
-            <th>Rating</th>
-            <th>Number of Videos</th>
-            <th>Tutor</th>
-            <th>link</th>
-            </tr>
-        </thead>
-        <tr>
-            <td>MEAN Stack</td>
-            <td>JavaScript, MongoDB, Express.js, Angular, Node.js, Projects	</td>
-            <td>12 weeks</td>
-            <td>4.8	</td>
-            <td>50</td>
-            <td>John Doe</td>
-            <td>link</td>
-        </tr>
-        <tr>
-            <td>MERN Stack</td>
-            <td>JavaScript, MongoDB, Express.js, React, Node.js, Projects</td>
-            <td>12 weeks</td>
-            <td>4.7	</td>
-            <td>48</td>
-            <td>Jane Smith</td>
-            <td>link</td>
-        </tr>
-        <tr>
-            <td>Generative AI</td>
-            <td>AI Basics, Neural Networks, GANs, NLP, Computer Vision</td>
-            <td>10 weeks</td>
-            <td>4.9</td>
-            <td>60</td>
-            <td>Alan Turing</td>
-            <td>link</td>
-        </tr>
-    </table>
-			
+    <div class="container mt-4">
+        <div class="row" id="course-container">
+    
+        </div>
+    </div>
 
+    <div id="modal-container"></div>
+
+    <script>
+   const courses = [
+    {
+        title: 'MEAN Stack',
+        description: 'JavaScript, MongoDB, Express.js, Angular, Node.js, Projects',
+        duration: '12 weeks',
+        rating: 4.8,
+        videos: 50,
+        tutor: 'John Doe',
+        link: './courses/meanstack.html',
+        additionalDescription: `
+            This course covers the full MEAN stack, providing hands-on projects to build real-world applications. Topics include:
+            <ul>
+                <li>Introduction to JavaScript and ES6</li>
+                <li>MongoDB: NoSQL Database</li>
+                <li>Express.js: Web Application Framework</li>
+                <li>Angular: Frontend Framework</li>
+                <li>Node.js: Server-side JavaScript</li>
+                <li>Building and Deploying MEAN Applications</li>
+            </ul>
+        `
+    },
+    {
+        title: 'MERN Stack',
+        description: 'JavaScript, MongoDB, Express.js, React, Node.js, Projects',
+        duration: '12 weeks',
+        rating: 4.7,
+        videos: 48,
+        tutor: 'Jane Smith',
+        link: './courses/mernstack.html',
+        additionalDescription: `
+            Learn the MERN stack with a focus on building dynamic and responsive web applications using React. Topics include:
+            <ul>
+                <li>JavaScript and ES6 Fundamentals</li>
+                <li>MongoDB: Data Modeling and Aggregation</li>
+                <li>Express.js: RESTful APIs</li>
+                <li>React: Components, Hooks, and State Management</li>
+                <li>Node.js: Backend Development</li>
+                <li>Full-Stack Project Development</li>
+            </ul>
+        `
+    },
+    {
+        title: 'Generative AI',
+        description: 'AI Basics, Neural Networks, GANs, NLP, Computer Vision',
+        duration: '10 weeks',
+        rating: 4.9,
+        videos: 60,
+        tutor: 'Alan Turing',
+        link: './courses/genai.html',
+        additionalDescription: `
+            Dive into the world of Generative AI, exploring neural networks, GANs, and applications in NLP and computer vision. Topics include:
+            <ul>
+                <li>Introduction to AI and Machine Learning</li>
+                <li>Neural Networks and Deep Learning</li>
+                <li>Generative Adversarial Networks (GANs)</li>
+                <li>Natural Language Processing (NLP)</li>
+                <li>Computer Vision Techniques</li>
+                <li>Building and Training AI Models</li>
+            </ul>
+        `
+    }
+];
+
+        const courseContainer = document.getElementById('course-container');
+        const modalContainer = document.getElementById('modal-container');
+
+        courses.forEach((course, index) => {
+            // Create card
+            const card = `
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm h-100" data-bs-toggle="modal" data-bs-target="#courseModal${index}">
+                        <div class="card-body">
+                            <h5 class="card-title">${course.title}</h5>
+                            <p class="card-text">${course.description}</p>
+                            <p class="card-text"><strong>Duration:</strong> ${course.duration}</p>
+                            <p class="card-text"><strong>Rating:</strong> ${course.rating}</p>
+                            <p class="card-text"><strong>Number of Videos:</strong> ${course.videos}</p>
+                            <p class="card-text"><strong>Tutor:</strong> ${course.tutor}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            courseContainer.innerHTML += card;
+
+            // Create modal
+            const modal = `
+                <div class="modal fade" id="courseModal${index}" tabindex="-1" aria-labelledby="courseModalLabel${index}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="courseModalLabel${index}">${course.title}</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>${course.description}</p>
+                                <p><strong>Duration:</strong> ${course.duration}</p>
+                                <p><strong>Rating:</strong> ${course.rating}</p>
+                                <p><strong>Number of Videos:</strong> ${course.videos}</p>
+                                <p><strong>Tutor:</strong> ${course.tutor}</p>
+                                <div> ${course.additionalDescription}</div>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="${course.link}" class="btn btn-primary">Go to Course</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            modalContainer.innerHTML += modal;
+        });
+    </script>
 </body>
 </html>
