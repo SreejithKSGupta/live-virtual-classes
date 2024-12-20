@@ -69,19 +69,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item" title="Home">
-          <a class="nav-link active" aria-current="page" href="#" onclick="goto(`home`,`welcome`,`to LVC`)">Home</a>
-        </li>
-        <li class="nav-item" title="Gallery">
-          <a class="nav-link" href="#" onclick="goto(`photogalery`)">Gallery</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" onclick="goto(`register`)">Register</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" onclick="goto(`help`)">Help</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" onclick="goto(`contact`)">Contact</a>
+          <a class="nav-link active" aria-current="page" href="#" onclick="goto(`home`)">Home</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" onclick="goto(`courses`)" role="button" data-bs-toggle="dropdown"
@@ -100,6 +88,15 @@
             </li>
             <li><span class="dropdown-item" href="#">new courses comming soon</span></li>
           </ul>
+        </li>
+        <li class="nav-item" title="Gallery">
+          <a class="nav-link" href="#" onclick="goto(`photogalery`)">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="goto(`register`)">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="goto(`help`)">Help</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" onclick="goto(`blog`)" role="button" data-bs-toggle="dropdown"
@@ -124,11 +121,16 @@
               <span class="dropdown-item" href="#" data-bs-toggle="tooltip" data-bs-placement="right"
                 title="Write blogs on LVC on your favourite topics.">Write Blogs</span>
             </li>
+           
           </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="goto(`contact`)">Contact</a>
         </li>
       </ul>
     </div>
   </nav>
+  
   <iframe src="./pages/home.html" id="contentframe" title="content" frameborder="0"></iframe>
 
   <footer id="footer" class="container-fluid" style="background-color: rgb(39, 39, 39); color: white;"
