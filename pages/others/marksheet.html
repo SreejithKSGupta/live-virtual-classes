@@ -19,7 +19,20 @@
             let english = parseFloat(markform.english.value);
             let total = maths + science + social + english;
             let avg = total / 4;
-            let msg = "dear " + name + " your Average for this semester is:" + avg;
+            
+            maxmarks = [maths,"maths"];
+            if (english>maxmarks[0]){
+                maxmarks = [english,"english"]
+            }
+            if (social>maxmarks[0]){
+                maxmarks = [social,"social"]
+            }
+            if (science>maxmarks[0]){
+                science = [science,"science"]
+            }
+            
+
+            let msg = " dear " + name + " your Average for this semester is : " + avg +".\n You got Highest mark in "+maxmarks[1]+" with " + maxmarks[0] + " marks." ;
             alert(msg)
         }
     </script>
