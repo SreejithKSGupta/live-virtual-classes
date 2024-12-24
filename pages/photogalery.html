@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
     <meta charset="utf-8">
@@ -25,7 +25,7 @@
             const galleryContainer = document.getElementById('gallery');
             galleryImages.forEach(image => {
                 const imgItem = document.createElement('div');
-                imgItem.className = 'col-lg-2 col-md-4 col-sm-6 mb-4';
+                imgItem.className = 'col-lg-3 col-md-6 col-sm-6';
                 imgItem.innerHTML = `<a href="${image.src}" data-lightbox="photos">
                                         <img src="${image.src}" class="img-fluid galimg" title="${image.title}" alt="${image.alt}">
                                      </a>`;
