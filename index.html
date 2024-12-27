@@ -79,7 +79,7 @@
                 <a class="nav-link active" aria-current="page" href="#" onclick="goto('home')">Home</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" onclick="goto('courses')" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Courses
                 </a>
                 <ul class="dropdown-menu">
@@ -100,7 +100,7 @@
                 <a class="nav-link" href="#" onclick="goto('help')">Help</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" onclick="goto('blog')" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Blogs
                 </a>
                 <ul class="dropdown-menu">
@@ -143,7 +143,7 @@
     });
 </script>
 
-  <iframe src="./pages/home.html" id="contentframe" title="content" frameborder="0"></iframe>
+  <iframe src="./pages/others/exampage.html" id="contentframe" title="content" frameborder="0"></iframe>
 
   <footer id="footer" class="container-fluid pt-3" style="backdrop-filter: brightness(80%);">
     <div class="row">
@@ -169,7 +169,7 @@
         <div class="d-flex flex-column align-items-center">
           <button class="btn my-2" onclick="goto('others/marksheet')">Marksheet</button>
           <button class="btn my-2" onclick="goto('others/scholorship')">Scholarship</button>
-          <button class="btn my-2" onclick="goto('courses/genai')">GEN AI</button>
+          <button class="btn my-2" onclick="goto('others/exampage')">Exam</button>
         </div>
       </div>
       <div class="col-12 col-md-3 text-center">
