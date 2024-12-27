@@ -44,17 +44,17 @@ function validatecontact(){
     let name = contactform.name.value;
     let email = contactform.email.value;
     let address = contactform.address.value;
-    
+    console.log(name,email,address)
     if (name==''){
-        alert("enter name");
+        alert("enter your name");
          return false;
     }
     else if (email==''){
-        alert("enter name");
+        alert("enter your email");
          return false;
     }
     else if (address==''){
-        alert("enter name");
+        alert("enter your address");
          return false;
     }
     return true;

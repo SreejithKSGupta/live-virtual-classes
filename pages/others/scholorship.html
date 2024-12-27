@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Calculator</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+</head>
+
+<body onload="printagree()" class="m-4">
+
+    <div class="container">
+        <div class="card shadow-sm">
+            <div class="card-header">
+                <h4>ELgigibor</h4>
+                <p>Check Scholarship Eligibility</p>
+            </div>
+            <div class="card-body">
+                <form name="markform" onsubmit="return calculate()">
+                  
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-4">
+                            <label for="maths" class="form-label">Maths</label>
+                            <input type="number" class="form-control" id="maths" name="maths" max="100" min="0" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="science" class="form-label">Science</label>
+                            <input type="number" class="form-control" id="science" name="science" max="100" min="0" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="social" class="form-label">Social</label>
+                            <input type="number" class="form-control" id="social" name="social" max="100" min="0" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="tscore" class="form-label">Tenth Score</label>
+                        <select class="form-select" id="tscore" name="tscore" required>
+                            <option value="90">More than 90</option>
+                            <option value="80">80-90</option>
+                            <option value="70">Less than 90</option>
+                        </select>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button type="reset" class="btn cancel-button px-3 bg-secondary">Cancel</button>
+                        <button type="submit" class="btn agree-button px-3 bg-primary">Check</button>
+                    </div>
+
+                    <div class="mt-4 h2" id="result"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        function printagree() {
+            let agree = (JSON.parse(localStorage.getItem("agreedtotandc")) || false);
+            if(!agree){
+                window.open('termsandconditions.html','conditions','width=1000px , height=700px');
+            }
+            
+        }
+
+        function calculate() {
+            let name = markform.name.value;
+            let maths = parseFloat(markform.maths.value);
+            let science = parseFloat(markform.science.value);
+            let social = parseFloat(markform.social.value);
+            let total = maths + science + social;
+            let avg = total / 3;
+            let tenth = document.getElementById("tscore").value;
+            let result = "";
+
+            if (avg > 90 && tenth > 90) {
+                result = "You get 50% scholarship";
+            } else if (avg > 90 && tenth > 80) {
+                result = "You get 35% scholarship";
+            } else if (avg > 80 && tenth > 80) {
+                result = "You get 25% scholarship";
+            } else if (avg > 70 && tenth > 70) {
+                result = "You get 15% scholarship";
+            } else {
+                result = "Sorry, you are not eligible for a scholarship. Better luck next time.";
+            }
+
+            document.getElementById("result").innerText = result;
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>
