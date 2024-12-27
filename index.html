@@ -64,81 +64,84 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top container-fluid px-4" style="min-height:10vh;">
+  <nav class="navbar navbar-expand-lg position-fixed container-fluid px-4" style="min-height:10vh;">
     <a class="navbar-brand" href="#">
-      <img src="./assets/logomed.webp" alt="Logo" width="30" height="30" class="d-inline-block align-text-top rounded">
-      LVC
+        <img src="./assets/logomed.webp" alt="Logo" width="30" height="30" class="d-inline-block align-text-top rounded">
+        LVC
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse align-items-right" id="navbarSupportedContent">
-      <ul class="navbar-nav me-1 mb-2 mb-lg-0 d-flex justify-content-end">
-        <li class="nav-item" title="Home">
-          <a class="nav-link active" aria-current="page" href="#" onclick="goto(`home`)">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" onclick="goto(`courses`)" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            courses
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#" onclick="goto(`courses/genai`)">Generative AI</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item" title="Home">
+                <a class="nav-link active" aria-current="page" href="#" onclick="goto('home')">Home</a>
             </li>
-            <li><a class="dropdown-item" href="#" onclick="goto(`courses/mernstack`)">MERN stack</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Courses
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" onclick="goto('courses/genai')">Generative AI</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="goto('courses/mernstack')">MERN stack</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="goto('courses/meanstack')">MEAN stack</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><span class="dropdown-item">New courses coming soon</span></li>
+                </ul>
             </li>
-            <li><a class="dropdown-item" href="#" onclick="goto(`courses/meanstack`)">MEAN stack</a>
+            <li class="nav-item" title="Gallery">
+                <a class="nav-link" href="#" onclick="goto('photogalery')">Gallery</a>
             </li>
-            <li>
-              <hr class="dropdown-divider">
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="goto('register')">Register</a>
             </li>
-            <li><span class="dropdown-item" href="#">new courses comming soon</span></li>
-          </ul>
-        </li>
-        <li class="nav-item" title="Gallery">
-          <a class="nav-link" href="#" onclick="goto(`photogalery`)">Gallery</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" onclick="goto(`register`)">Register</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" onclick="goto(`help`)">Help</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" onclick="goto(`blog`)" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            Blogs
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#" onclick="goto(`blogposts/ai`)">Artificial
-                Intelligence</a></li>
-            <li><a class="dropdown-item" href="#" onclick="goto(`blogposts/copilot`)">Copilot</a>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="goto('help')">Help</a>
             </li>
-            <li><a class="dropdown-item" href="#" onclick="goto(`blogposts/dl`)">Deep Learning</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Blogs
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" onclick="goto('blogposts/ai')">Artificial Intelligence</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="goto('blogposts/copilot')">Copilot</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="goto('blogposts/dl')">Deep Learning</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="goto('blogposts/llm')">Large Language Models</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="goto('blogposts/genai')">Generative AI</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><span class="dropdown-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Write blogs on LVC on your favourite topics.">Write Blogs</span></li>
+                </ul>
             </li>
-            <li><a class="dropdown-item" href="#" onclick="goto(`blogposts/llm`)">Large
-                language models</a></li>
-            <li><a class="dropdown-item" href="#" onclick="goto(`blogposts/genai`)">Generative AI</a>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="goto('contact')">Contact</a>
             </li>
-            <li>
-              <hr class="dropdown-divider">
+            <li class="nav-item d-flex align-items-center px-3">
+                <div class="form-switch">
+                    <input class="form-check-input" type="checkbox" id="toggleTheme" checked>
+                    <label class="form-check-label" for="toggleTheme">
+                      <i id="themeicon" class="fas fa-sun"></i>
+                    </label>
+                </div>
             </li>
-            <li>
-              <span class="dropdown-item" href="#" data-bs-toggle="tooltip" data-bs-placement="right"
-                title="Write blogs on LVC on your favourite topics.">Write Blogs</span>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" onclick="goto(`contact`)">Contact</a>
-        </li>
-        <li class="nav-item form-check form-switch" style="display: flex; align-items: center;">
-          <input class="form-check-input" type="checkbox" id="toggleTheme" checked>
-        </li>
-      </ul>
+        </ul>
     </div>
-  </nav>
+</nav>
+
+<script>
+    document.getElementById('toggleTheme').addEventListener('change', function() {
+        document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode')){
+              document.getElementById("themeicon").classList.add('fa-moon');
+              document.getElementById("themeicon").classList.remove('fa-sun');
+
+        }
+        else {
+          document.getElementById("themeicon").classList.remove('fa-moon');
+          document.getElementById("themeicon").classList.add('fa-sun');
+        }
+    });
+</script>
 
   <iframe src="./pages/home.html" id="contentframe" title="content" frameborder="0"></iframe>
 
