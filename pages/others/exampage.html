@@ -99,6 +99,18 @@
     renderexam();
 
     function validateqp() {
+        let qansweered = 0
+        exampaper.forEach(item => {
+            let selectedOption = document.querySelector(`input[name="${item.question}"]:checked`);
+            console.log(selectedOption,qansweered)
+            if (selectedOption){
+                qansweered+=1;
+            }
+        })
+        if (qansweered<4){
+            alert("You should atleast answer 4 questions.");
+            return false ;
+        }
         let confirmval = confirm("do you really want to submit?");
         if (confirmval == true) {
             qpcorrection();
