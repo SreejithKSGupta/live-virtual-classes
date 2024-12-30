@@ -3,6 +3,7 @@ body {
     width: clamp(100px,90vw,800px);
     margin-left: auto;
     margin-right: auto;
+    overscroll-behavior: none;
 }
 
 .title {
@@ -36,4 +37,7 @@ tr:nth-child(even){
 }
 td:nth-child(1){
     background-color: rgba(0, 0, 0, 0.226);
+}
+::-webkit-scrollbar{
+    display: none;
 }
