@@ -1,22 +1,32 @@
 body {
     padding: 20px;
     width: clamp(100px,90vw,800px);
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
     overscroll-behavior: none;
 }
 
 .title {
     font-size: x-large;
     text-align: left;
-    padding: 10px 30px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    color: rgb(7, 48, 82);
+    color: rgb(5, 108, 192);
+    padding-top: 20px;
+}
+
+p {
+    padding-left: 10px;
+}
+
+[data-bs-theme="dark"] .title {
+    color: #00ffdd;
 }
 
 .txt {
-    padding-left: 50px; 
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 table {

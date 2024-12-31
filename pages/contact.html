@@ -12,21 +12,32 @@
     <script src="./theme.js"></script>
 </head>
 <body>
-    <div class="container mt-5">
-        <div class="row gy-4">
-            <div class="col-lg-6">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15550.353423066055!2d77.6650384068489!3d12.998160020084052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae11160584b811%3A0xf78e9a6cc6a56d02!2sPushpanjali%20Theatre!5e0!3m2!1sen!2sin!4v1733727803479!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <div class="col-lg-6 d-flex flex-column align-items-start">
-                <h2 class="btx">Contact Us</h2>
-                <form name="contactform" onsubmit="return validatecontact()" action="../pages/others/res.html">
-                <input type="text" class="form-control mb-2" name="name" placeholder="Enter your name" id="">
-                <input type="email" class="form-control mb-2" name="email" placeholder="Enter your email" id="">
-                <textarea class="form-control mb-2" style="height: 150px;" name="address" placeholder="Enter your message"></textarea>
-                <input type="submit" class="btn btn-primary" value="Submit">
+   <div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="row gy-4 w-100">
+        <div class="col-lg-6">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15550.353423066055!2d77.6650384068489!3d12.998160020084052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae11160584b811%3A0xf78e9a6cc6a56d02!2sPushpanjali%20Theatre!5e0!3m2!1sen!2sin!4v1733727803479!5m2!1sen!2sin" 
+                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        <div class="col-lg-6">
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <form name="contactform" action="../pages/others/res.html" method="POST">
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" style="height: 150px;" name="address" placeholder="Enter your message" required></textarea>
+                </div>
+                <div class="text-center">
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                </div>
             </form>
-            </div>
         </div>
     </div>
+</div>
+
 </body>
 </html>

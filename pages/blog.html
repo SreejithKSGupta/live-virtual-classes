@@ -49,10 +49,9 @@
             blogPosts.forEach(post => {
                 const cardHTML = `
                     <div class="col">
-                        <div class="card shadow-sm h-100" style="cursor: pointer;" onclick="takeblog('${post.slug}')">
+                        <div class="card shadow-sm " style="cursor: pointer;" onclick="takeblog('${post.slug}')">
                             <img src="${post.image}" class="card-img-top" alt="${post.title}">
                             <div class="card-body">
-                              
                                 <p class="card-text">${post.description}</p>
                             </div>
                             <div class="card-footer text-muted">
@@ -73,7 +72,7 @@
     </script>
 </head>
 <body>
-    <div class="container my-5">
+    <div class="container my-1">
         <div class="row row-cols-1 row-cols-md-4 g-4" id="blog-container">
         </div>
     </div>

@@ -1,19 +1,18 @@
 body{
         padding: 20px;
         width: clamp(100px,90vw,800px);
-        margin-left: auto;
-        margin-right: auto;
         box-sizing: border-box;
-    
+        margin-left: auto !important;
+        margin-right: auto !important;
 }
 header {
     font-size: x-large;
-    text-align: left;
-    padding: 10px 30px;
+    text-align: center;
+    padding: 10px 0px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    color: rgb(7, 48, 82);
 }
+
 section{
     margin: 5px;
     padding: 5px;
@@ -21,14 +20,14 @@ section{
 }
 h2{
     color: rgb(7, 48, 82);
-    padding: 10px;
+    padding-top: 10px;
 }
 strong {
     padding-right: 10px;
-    color: rgb(7, 48, 82);
+    color: rgb(42, 159, 255);
 }
 ul{
-    background-color: rgb(185, 185, 185);
+    background-color: rgba(0, 0, 0, 0.13);
     border-radius: 3px;
 }
 
@@ -44,4 +43,8 @@ li:nth-child(odd){
 
 ::-webkit-scrollbar{
     display: none;
+}
+
+[data-bs-theme="dark"] h2 {
+    color: #6bffba !important;
 }
