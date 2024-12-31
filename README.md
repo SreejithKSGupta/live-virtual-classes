@@ -4,5 +4,4 @@
 https://sreejithksgupta.github.io/live-virtual-classes/
 
 ## todo
-- improve search us section
 - gallery not working
